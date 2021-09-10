@@ -1,0 +1,20 @@
+{
+  "name": "stay-productive-landing",
+  "version": "0.0.0",
+  "description": "Web pages for `stay-productive` browser extesion.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/flowwishthebest/stay-productive-landing.git"
+  },
+  "keywords": ["web", "landing", "page"],
+  "author": "Ilya P. <togowiththeflow@gmail.com> @flowwishthebest",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/flowwishthebest/stay-productive-landing/issues"
+  },
+  "homepage": "https://github.com/flowwishthebest/stay-productive-landing#readme"
+}
