@@ -16,4 +16,7 @@ app.get('/whats-new', (req, res) => {
 	res.send('Whats up!');
 });
 
+app.disable('x-powered-by');
+app.disable('etag');
+
 module.exports = app;
