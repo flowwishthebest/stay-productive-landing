@@ -4,7 +4,8 @@
   "description": "Web pages for `stay-productive` browser extesion.",
   "main": "index.js",
   "scripts": {
-    "test": "mocha"
+    "test": "mocha",
+		"lint": "eslint ."
   },
   "repository": {
     "type": "git",
@@ -26,6 +27,7 @@
   },
   "devDependencies": {
     "chai": "^4.3.4",
+    "eslint": "^7.32.0",
     "mocha": "^9.1.1",
     "supertest": "^6.1.6"
   }
