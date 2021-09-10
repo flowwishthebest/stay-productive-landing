@@ -10,11 +10,18 @@
     "type": "git",
     "url": "git+https://github.com/flowwishthebest/stay-productive-landing.git"
   },
-  "keywords": ["web", "landing", "page"],
+  "keywords": [
+    "web",
+    "landing",
+    "page"
+  ],
   "author": "Ilya P. <togowiththeflow@gmail.com> @flowwishthebest",
   "license": "MIT",
   "bugs": {
     "url": "https://github.com/flowwishthebest/stay-productive-landing/issues"
   },
-  "homepage": "https://github.com/flowwishthebest/stay-productive-landing#readme"
+  "homepage": "https://github.com/flowwishthebest/stay-productive-landing#readme",
+  "dependencies": {
+    "express": "^4.17.1"
+  }
 }
