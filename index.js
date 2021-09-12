@@ -3,6 +3,13 @@
 const app = require('./app');
 const config = require('./config');
 
-app.listen(config.port, () => {
-  console.log(`Example app listening at http://localhost:${config.port}`)
+async function main() {
+	app.listen(config.port, () => {
+		console.log(`App listening at ${config.port}`);
+	});
+}
+
+main().catch((err) => {
+	console.error(err);
+	process.exit(1);
 });
