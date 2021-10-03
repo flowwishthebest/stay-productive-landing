@@ -1,8 +1,7 @@
 'use strict';
 
-const app = require('../app');
+const app = require('../lib/app');
 const supertest = require('supertest');
-const chai = require('chai');
 
 describe('app', () => {
 	describe('api', () => {
@@ -10,13 +9,10 @@ describe('app', () => {
 			supertest(app)
 				.get('/see-you-later')
 				.expect('Content-Type', /html/)
-				.expect(200, function(err, res) {
+				.expect(200, (err) => {
 					if (err) {
 						return done(err);
 					}
-
-					chai.expect(res.status).to.equal(200);
-
 					done();
 				});
 		});
@@ -25,13 +21,10 @@ describe('app', () => {
 			supertest(app)
 				.get('/see-you-later')
 				.expect('Content-Type', /html/)
-				.expect(200, function(err, res) {
+				.expect(200, (err) => {
 					if (err) {
 						return done(err);
 					}
-
-					chai.expect(res.status).to.equal(200);
-
 					done();
 				});
 		});
@@ -40,13 +33,10 @@ describe('app', () => {
 			supertest(app)
 				.get('/whats-new')
 				.expect('Content-Type', /html/)
-				.expect(200, function(err, res) {
+				.expect(200, (err) => {
 					if (err) {
 						return done(err);
 					}
-
-					chai.expect(res.status).to.equal(200);
-
 					done();
 				});
 		});
@@ -55,13 +45,10 @@ describe('app', () => {
 			supertest(app)
 				.get('/unknown-url')
 				.expect('Content-Type', /html/)
-				.expect(404, function(err, res) {
+				.expect(404, (err) => {
 					if (err) {
 						return done(err);
 					}
-
-					chai.expect(res.status).to.equal(404);
-
 					done();
 				});
 		});
