@@ -4,12 +4,12 @@ const app = require('./app');
 const config = require('./config');
 
 async function main() {
-  app.listen(config.port, () => {
-    console.log(`App listening at ${config.port}`);
-  });
+	const server = app.listen(config.port, () => {
+		console.log(`App listening at ${server.address().port}`);
+	});
 }
 
 main().catch((err) => {
-  console.error(err);
-  process.exit(1);
+	console.error(err);
+	process.exit(1);
 });
