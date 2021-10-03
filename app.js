@@ -1,31 +1,14 @@
 'use strict';
 
 const express = require('express');
+const path = require('path');
 
 const app = express();
 
-app.get('/getting-started', (req, res) => {
-  res.send('Hello World!');
-});
+app.use('/', require('./api'));
 
-app.get('/see-you-later', (req, res) => {
-  res.send('Good Bye!');
-});
-
-app.get('/whats-new', (req, res) => {
-  res.send('Whats up!');
-});
-
-app.all('*', (req, res) => {
-  // TODO: send 4xx page
-  res.status(404).send('I do not understand you');
-});
-
-app.use((err, req, res) => {
-  console.error(err);
-  // TODO: send 5xx page
-  res.status(500).send('I am sleeping');
-});
+app.set('views', path.join(process.cwd(), 'assets', 'templates'));
+app.set('view engine', 'pug');
 
 app.disable('x-powered-by');
 app.disable('etag');
