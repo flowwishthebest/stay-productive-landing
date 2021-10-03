@@ -1,6 +1,6 @@
 'use strict';
 
-const app = require('./app');
+const app = require('./lib/app');
 const config = require('./config');
 
 async function main() {
