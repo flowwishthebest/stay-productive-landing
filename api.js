@@ -4,12 +4,32 @@ const express = require('express');
 
 const router = express.Router();
 
-router.get('/getting-started', (req, res) => {
-	res.send('Hello World!');
+router.get('/getting-started', (req, res, next) => {
+	const ctx = {
+		message: 'Thank you for installing `Stay productive` chrome extension.',
+		title: 'Stay productive | Welcome!',
+		copyright: new Date().getFullYear(),
+	};
+
+	res.render('hi', ctx, (err, html) => {
+		if (err) {
+			return next(err);
+		}
+		res.send(html);
+	});
 });
 
-router.get('/see-you-later', (req, res) => {
-	res.send('Good Bye!');
+router.get('/see-you-later', (req, res, next) => {
+	res.render('bye', {
+		message: 'We will miss you. Come back sooner.',
+		title: 'Stay productive | Bye bye!',
+		copyright: new Date().getFullYear(),
+	}, (err, html) => {
+		if (err) {
+			return next(err);
+		}
+		res.send(html);
+	});
 });
 
 router.get('/whats-new', (req, res) => {
@@ -21,7 +41,8 @@ router.all('*', (req, res) => {
 	res.status(404).send('I do not understand you');
 });
 
-router.use((err, req, res) => {
+// eslint-disable-next-line no-unused-vars
+router.use((err, req, res, next) => {
 	console.error(err);
 	// TODO: send 5xx page
 	res.status(500).send('I am sleeping');

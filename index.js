@@ -5,7 +5,8 @@ const config = require('./config');
 
 async function main() {
 	const server = app.listen(config.port, () => {
-		console.log(`App listening at ${server.address().port}`);
+		const addr = server.address();
+		console.log(`App listening at ${addr.port}`);
 	});
 }
 
